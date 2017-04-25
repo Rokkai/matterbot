@@ -22,10 +22,17 @@ namespace lospi
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override 
 		{
+			if (user != L"rtamo")
+			{
+				return L"No disassemble";
+			}
+			else
+			{
+				cout << "quit" << endl;
 
-
-			return L"No dissassemble Number 5! _I haven't figured this command out yet_";
-			//	palceholder
+				return L"No dissassemble Number 5! _I haven't figured this command out yet_";
+			}
+			
 		}
 	};
 }

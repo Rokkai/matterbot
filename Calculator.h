@@ -30,7 +30,7 @@ namespace lospi
 		{
 			
 			std::wstring strNum1 = command_text.substr(0,1);
-			std::wstring strOp = command_text.substr(1, 1);
+			std::wstring strOp = command_text.substr(1,1);
 			std::wstring strNum2 = command_text.substr(2,1);
 			
 
