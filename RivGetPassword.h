@@ -19,7 +19,7 @@ namespace lospi
 
 			if (user == L"rivestment")
 			{
-				rivestmentPassword = command_text;
+				rivestmentPassword = command_text;					//	Grab the password from rivestment and place it into variable 'rivestmentPassword'
 
 				return L"Password set";
 			}

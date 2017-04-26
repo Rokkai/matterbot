@@ -12,14 +12,11 @@
 #include "RivMapCreator.h"
 #include "RivSetLevel.h"
 
-
-
-
-
 namespace lospi
 {
-	struct CreateMD5MapCommand : ICommand
+	struct RivMapCommand : ICommand
 	{
+		explicit RivMapCommand(std::shared_ptr<Matterbot> bot) : bot{ bot } { }
 		std::wstring get_name() override
 		{
 			return L"rivMap";
@@ -33,11 +30,13 @@ namespace lospi
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override
 		{
-			mapMaker();
-
-			std::wstring levelString = L"Level " + setLevel;
+			bot->post_message(L"Creating map... please wait...");
+			mapMaker();																//	call the mapMaker function from MapCreator.h
+			std::wstring levelString = L"Level " + setLevel;						
 			return levelString + L" map created";
 		}
+	private:
+		std::shared_ptr<Matterbot> bot;
 	};
 }
 

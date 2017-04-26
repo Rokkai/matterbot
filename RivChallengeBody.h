@@ -36,32 +36,70 @@ namespace lospi
 				std::wistringstream sourceHash( command_text );						//	source
 				std::wstring returnValue;											//	value to append destination into
 
-				while (getline(sourceHash, destHash, L' '))
+				while (getline(sourceHash, destHash, L' '))							//	while getline grabs the line, delineates and a space, and places stuff in destHash...
 				{
-					Md5Digest takenMD5 = get_md5_from_str(destHash);
+					Md5Digest takenMD5 = get_md5_from_str(destHash);				//	...convert what's taken into md5 format
 
-					auto result = lookup.begin();
-					result = lookup.find(takenMD5);
-
-					if (result == lookup.end())
+					auto result = lookup.find(takenMD5);							//	create the result variable as the match for takenMD5
+					if (result == lookup.end())										//	if the lookup pointer returns null, it needs to be reset.
 					{
-						result = lookup.begin();
 						return L"you need to reset the map iterator";
 					}
 
-					auto value = result->second;
+					auto value = result->second;									//	create the variable for the new password that we want to try
 
-					returnValue = returnValue + L" " + string_to_wstring(value);
+					returnValue = returnValue + L" " + string_to_wstring(value);	//	append the value to a list of values
 				}
-				return L"rivestment try" + returnValue;
+				return L"rivestment try" + returnValue;								//	return the line with the list of values
 			}
 			else
 			{
 				return L"Invalid permissions";
 			}
+		}
+	};
 
-				
-			
+	struct RivScrapCommand : ICommand
+	{
+		std::wstring get_name() override
+		{
+			return L"rivScraps";
+		}
+
+		std::wstring get_help() override
+		{
+			return L"`rivScraps`: will retrieve any unsolved scraps for the bot to retry";
+		}
+
+		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
+			const std::wstring &user, const std::wstring &command_text) override
+		{
+			if (user == L"rivestment" || user == L"rtamo")
+			{
+				std::wstring destHash;												//	destination
+				std::wistringstream sourceHash(command_text);						//	source
+				std::wstring returnValue;											//	value to append destination into
+
+				while (getline(sourceHash, destHash, L' '))							//	while getline grabs the line, delineates and a space, and places stuff in destHash...
+				{
+					Md5Digest takenMD5 = get_md5_from_str(destHash);				//	...convert what's taken into md5 format
+
+					auto result = lookup.find(takenMD5);							//	create the result variable as the match for takenMD5
+					if (result == lookup.end())										//	if the lookup pointer returns null, it needs to be reset.
+					{
+						return L"you need to reset the map iterator";
+					}
+
+					auto value = result->second;									//	create the variable for the new password that we want to try
+
+					returnValue = returnValue + L" " + string_to_wstring(value);	//	append the value to a list of values
+				}
+				return L"rivestment try" + returnValue;								//	return the line with the list of values
+			}
+			else
+			{
+				return L"Invalid permissions";
+			}
 		}
 	};
 }

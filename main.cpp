@@ -53,7 +53,7 @@ int main()
 		bot->register_command(make_shared<CalculateCommand>());
 		bot->register_command(make_shared<AdventureOneCommand>());
 		bot->register_command(make_shared<RChallengeCommand>());
-		bot->register_command(make_shared<CreateMD5MapCommand>());
+		bot->register_command(make_shared<RivMapCommand>(bot));
 		bot->register_command(make_shared<RivGetPWCommand>());
 		bot->register_command(make_shared<RivStartChallengeCommand>(bot));
 		bot->register_command(make_shared<RivStopChallengeCommand>(bot));
@@ -61,6 +61,7 @@ int main()
 		bot->register_command(make_shared<RivSetPWCommand>());
 		bot->register_command(make_shared<RivRegisterCommand>());
 		bot->register_command(make_shared<RivQuitCommand>());
+		bot->register_command(make_shared<RivScrapCommand>());
 		bot->post_message(welcome_message);
 
 		wstring console;
