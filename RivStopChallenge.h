@@ -18,9 +18,16 @@ namespace lospi
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override
 		{
-			bot->post_message(L"stopping challenges");
-			loop = false;											//	stop the loop that's keeping the challenge going
-			return L"challenge stopped";
+			if (user == L"rtamo")
+			{
+				bot->post_message(L"stopping challenges");
+				loop = false;											//	stop the loop that's keeping the challenge going
+				return L"challenge stopped";
+			}
+			else
+			{
+				return L"Can't stop, won't stop";
+			}
 		}
 	private:
 		std::shared_ptr<Matterbot> bot;

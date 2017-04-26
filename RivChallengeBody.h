@@ -30,7 +30,7 @@ namespace lospi
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override 
 		{
-			if (user == L"rivestment" || user == L"rtamo")
+			if (user == L"rivestment")
 			{
 				std::wstring destHash;												//	destination
 				std::wistringstream sourceHash( command_text );						//	source
@@ -63,18 +63,18 @@ namespace lospi
 	{
 		std::wstring get_name() override
 		{
-			return L"rivScraps";
+			return L"scraps";
 		}
 
 		std::wstring get_help() override
 		{
-			return L"`rivScraps`: will retrieve any unsolved scraps for the bot to retry";
+			return L"`scraps`: will retrieve any unsolved scraps for the bot to retry";
 		}
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override
 		{
-			if (user == L"rivestment" || user == L"rtamo")
+			if (user == L"rivestment")
 			{
 				std::wstring destHash;												//	destination
 				std::wistringstream sourceHash(command_text);						//	source

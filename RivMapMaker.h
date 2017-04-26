@@ -30,10 +30,21 @@ namespace lospi
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override
 		{
-			bot->post_message(L"Creating map... please wait...");
-			mapMaker();																//	call the mapMaker function from MapCreator.h
-			std::wstring levelString = L"Level " + setLevel;						
-			return levelString + L" map created";
+			if (user == L"rtamo")
+			{
+				bot->post_message(L"Creating map... please wait...");
+				if (Level == 4)
+				{
+					bot->post_message(L"At level 4 this will take about 5 minutes...");
+				}
+				mapMaker();																//	call the mapMaker function from MapCreator.h
+				std::wstring levelString = L"Level " + setLevel;
+				return levelString + L" map created";
+			}
+			else
+			{
+				return L"Invalid permissions";
+			}
 		}
 	private:
 		std::shared_ptr<Matterbot> bot;
