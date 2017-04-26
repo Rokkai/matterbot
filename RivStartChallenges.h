@@ -22,12 +22,12 @@ namespace lospi {
 				{
 					if (Level > 2)
 					{
-						bot->post_message(L"rivestment challenge 100");
+						bot->post_message(L"rivestment challenge 200");
 						_sleep(5000);
 					}
 					else
 					{
-						bot->post_message(L"rivestment challenge 100");
+						bot->post_message(L"rivestment challenge 200");
 						_sleep(3000);
 					}
 				}
@@ -35,12 +35,12 @@ namespace lospi {
 				{
 					if (Level > 2)
 					{
-						bot->post_message(L"rivestment challenge 200");
+						bot->post_message(L"rivestment challenge 100");
 						_sleep(5000);
 					}
 					else
 					{
-						bot->post_message(L"rivestment challenge 200");
+						bot->post_message(L"rivestment challenge 100");
 						_sleep(3000);
 					}
 					pointLevel++;
