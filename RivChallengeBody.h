@@ -24,7 +24,7 @@ namespace lospi
 
 		std::wstring get_help() override 
 		{
-			return L"`challenges`: will read hashes from rivestment and return a try command when matches are found";
+			return L"`challenges` `#`: will read `#` hashes from rivestment and return a try command when matches are found";
 		}
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,

@@ -10,6 +10,7 @@
 #include <map>
 #include "RivGetPassword.h"
 #include "RivMapCreator.h"
+#include "RivSetLevel.h"
 
 
 
@@ -21,19 +22,21 @@ namespace lospi
 	{
 		std::wstring get_name() override
 		{
-			return L"createMap";
+			return L"rivMap";
 		}
 
 		std::wstring get_help() override
 		{
-			return L"`createMap [wstring]`: will run the function to create a md5 hash map and return notification of when it's completed.";
+			return L"`rivMap [wstring]`: will run the function to create a md5 hash map and return notification of when it's completed.";
 		}
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override
 		{
 			mapMaker();
-			return L"Map created";
+
+			std::wstring levelString = L"Level " + setLevel;
+			return levelString + L" map created";
 		}
 	};
 }

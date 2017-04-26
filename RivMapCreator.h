@@ -10,7 +10,7 @@
 #include <map>
 #include "RivGetPassword.h"
 #include "RivMapMaker.h"
-
+#include "RivSetLevel.h"
 
 using namespace lospi;
 using namespace std;
@@ -27,14 +27,13 @@ void mapMaker()
 
 																	//Generate the passwords using Combinator					////////////////////////////////
 		
-		for (size_t i = 5; i < 15; i++)												//	i is the level					
+		for (size_t i = Level; i < (Level + 10); i++)												//	i is the level					
 		{
 			Combinator c{ "hsoj", i };
 			while (c.has_next())													//	while there is a next combo
 			{
 				auto combo = c.next();
 
-				//pw, combo;														//denote the source and destination	(source,destination;)
 				copy(pw.begin(), pw.end(), back_inserter(combo));					//copy with back_inserter to place at the end of the combo
 
 				auto md5 = compute_md5(combo.data(), (unsigned long)combo.size());	//	create an md5 out of it
