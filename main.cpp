@@ -36,9 +36,9 @@ using namespace lospi;
 int main()
 {
 	wstring mattermost_url = L"https://hooks.slack.com",
-		incoming_hook_route = L"services/T4Z1QAKSS/B50MTPR38/pIKBW9q51mbnTq7Fw4eABx8w",
-		outgoing_hook_route = L"http://127.0.0.1:8000/",
-		outgoing_hook_token = L"gkVzVtGd4J1bfc8KcDeOshzk",
+		incoming_hook_route = L"//",
+		outgoing_hook_route = L"//",
+		outgoing_hook_token = L"//",
 		welcome_message = L"Number Five is *Alive*.",
 		rivestment_message = L"_Note:_ `rivHelp` _will be useful for interacting with rivestment._",
 		exit_message = L"*NO DISASSEMBLE!* _shutting down_";
