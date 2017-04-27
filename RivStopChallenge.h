@@ -3,8 +3,6 @@
 #include <algorithm>
 #include "RivStartChallenges.h"
 
-
-
 namespace lospi
 {
 	struct RivStopChallengeCommand : ICommand
@@ -13,7 +11,7 @@ namespace lospi
 
 		std::wstring get_name() override {	return L"rivStop";	}
 
-		std::wstring get_help() override	{	return L"`rivStop [wstring]`: will stop the rivestment challenge loop";	}
+		std::wstring get_help() override	{	return L"`rivStop`: will stop the rivestment challenge loop";	}
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override

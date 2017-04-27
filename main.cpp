@@ -14,16 +14,17 @@
 #include "RivChallengeBody.h"
 #include "Md5.h"
 #include "Md5Utilities.h"
-#include "RivMapMaker.h"
+#include "RivMapCommands.h"
 #include "RivGetPassword.h"
 #include <map>
-#include "RivMapCreator.h"
+#include "RivMapCommandBody.h"
 #include "RivStartChallenges.h"
 #include "RivStopChallenge.h"
 #include "RivSetLevel.h"
 #include "RivSetPassword.h"
 #include "RivRegister.h"
 #include "RivQuit.h"
+#include "RivHelp.h"
 
 
 #define ERROR_SUCCESS 0
@@ -35,10 +36,11 @@ using namespace lospi;
 int main()
 {
 	wstring mattermost_url = L"https://hooks.slack.com",
-		incoming_hook_route = L"//",
-		outgoing_hook_route = L"//",
-		outgoing_hook_token = L"//",
+		incoming_hook_route = L"services/T4Z1QAKSS/B50MTPR38/pIKBW9q51mbnTq7Fw4eABx8w",
+		outgoing_hook_route = L"http://127.0.0.1:8000/",
+		outgoing_hook_token = L"gkVzVtGd4J1bfc8KcDeOshzk",
 		welcome_message = L"Number Five is *Alive*.",
+		rivestment_message = L"_Note:_ `rivHelp` _will be useful for interacting with rivestment._",
 		exit_message = L"*NO DISASSEMBLE!* _shutting down_";
 
 	try {
@@ -52,8 +54,10 @@ int main()
 		bot->register_command(make_shared<QuitCommand>());
 		bot->register_command(make_shared<CalculateCommand>());
 		bot->register_command(make_shared<AdventureOneCommand>());
+
 		bot->register_command(make_shared<RChallengeCommand>());
-		bot->register_command(make_shared<RivMapCommand>(bot));
+		bot->register_command(make_shared<RivMapCreateCommand>(bot));
+		bot->register_command(make_shared<RivMapDestroyCommand>(bot));
 		bot->register_command(make_shared<RivGetPWCommand>());
 		bot->register_command(make_shared<RivStartChallengeCommand>(bot));
 		bot->register_command(make_shared<RivStopChallengeCommand>(bot));
@@ -62,7 +66,9 @@ int main()
 		bot->register_command(make_shared<RivRegisterCommand>());
 		bot->register_command(make_shared<RivQuitCommand>());
 		bot->register_command(make_shared<RivScrapCommand>());
+		bot->register_command(make_shared<RivHelpCommand>());
 		bot->post_message(welcome_message);
+		bot->post_message(rivestment_message);
 
 		wstring console;
 		wclog << ">> Type \'quit\' to quit. Any other input will be sent to the bot." << endl;

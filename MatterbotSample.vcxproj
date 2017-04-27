@@ -171,13 +171,14 @@
   <ItemGroup>
     <ClInclude Include="AdventureOne.h" />
     <ClInclude Include="Calculator.h" />
-    <ClInclude Include="RivMapCreator.h" />
+    <ClInclude Include="RivHelp.h" />
+    <ClInclude Include="RivMapCommandBody.h" />
     <ClInclude Include="RivQuit.h" />
     <ClInclude Include="RivRegister.h" />
     <ClInclude Include="RivSetLevel.h" />
     <ClInclude Include="RivSetPassword.h" />
     <ClInclude Include="RivStartChallenges.h" />
-    <ClInclude Include="RivMapMaker.h" />
+    <ClInclude Include="RivMapCommands.h" />
     <ClInclude Include="Md5.h" />
     <ClInclude Include="Md5Utilities.h" />
     <ClInclude Include="QuitCommand.h" />

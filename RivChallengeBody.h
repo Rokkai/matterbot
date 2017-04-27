@@ -1,3 +1,8 @@
+////		TOC			////
+////	C1. Challenges	////
+////	C2. Scraps		////
+
+
 #pragma once
 #include "Matterbot.h"
 #include "Md5.h"
@@ -9,7 +14,7 @@
 #include <sstream>
 #include <map>
 #include "RivGetPassword.h"
-#include "RivMapMaker.h"
+#include "RivMapCommands.h"
 
 std::wstring passwordvariable;
 
@@ -58,7 +63,9 @@ namespace lospi
 			}
 		}
 	};
-
+	////////////////////////////////////////////////////////////////////////////////
+	////////	Scrap command for JohnnyFive to grab scraps from rivestment	////////
+	////////////////////////////////////////////////////////////////////////////////
 	struct RivScrapCommand : ICommand
 	{
 		std::wstring get_name() override
@@ -95,6 +102,10 @@ namespace lospi
 					returnValue = returnValue + L" " + string_to_wstring(value);	//	append the value to a list of values
 				}
 				return L"rivestment try" + returnValue;								//	return the line with the list of values
+			}
+			else if (user == L"rtamo")
+			{
+				return L"rivestment scraps";
 			}
 			else
 			{

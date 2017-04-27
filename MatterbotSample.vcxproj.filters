@@ -65,16 +65,10 @@
     <ClInclude Include="RivGetPassword.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RivMapMaker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RivStartChallenges.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RivStopChallenge.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RivMapCreator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RivChallengeBody.h">
@@ -90,6 +84,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RivQuit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RivMapCommandBody.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RivMapCommands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RivHelp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

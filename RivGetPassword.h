@@ -11,7 +11,7 @@ namespace lospi
 		}
 
 		std::wstring get_help() override {
-			return L"`password [MESSAGE]`: will assign the given password to a variable.";
+			return L"`password [MESSAGE]`: will assign the retrieved password to a variable.";
 		}
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
