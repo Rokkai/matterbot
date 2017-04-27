@@ -28,7 +28,7 @@ void mapMaker()
 
 		////////////////////////////////		Generate the password and hash map using Combinator					////////////////////////////////
 		
-		for (size_t i = Level; i < (Level + 10); i++)								//	i is the level					
+		for (size_t i = (Level - 1); i < (Level + 10); i++)								//	i is the level					
 		{
 			Combinator c{ "hsoj", i };
 			while (c.has_next())													//	while there is a next combo
